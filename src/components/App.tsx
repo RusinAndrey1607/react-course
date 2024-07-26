@@ -5,13 +5,16 @@ import { AboutPageLazy } from "../pages/AboutPage/AboutPage.lazy";
 import { MainPageLazy } from "../pages/MainPage/MainPage.lazy";
 import { Suspense } from "react";
 import { useTheme } from "../theme/useTheme";
+import { classNames } from "../helpers/classNames/classNames";
 type Props = {};
 
 export const App = (props: Props) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
+    <div
+      className={classNames("app", { hovered: false, selected: true }, [theme])}
+    >
       <button onClick={toggleTheme}>Toggle Theme</button>
       <Link to={"/"}>Main page</Link>
       <Link to={"/about"}>About page</Link>
