@@ -1,11 +1,12 @@
-import "../styles/index.scss";
+import "./styles/index.scss";
 import { Route, Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { AboutPageLazy } from "../pages/AboutPage/AboutPage.lazy";
-import { MainPageLazy } from "../pages/MainPage/MainPage.lazy";
 import { Suspense } from "react";
-import { useTheme } from "../theme/useTheme";
-import { classNames } from "../helpers/classNames/classNames";
+import { useTheme } from "app/providers/ThemeProvider/";
+import { AboutPage } from "pages/AboutPage";
+import { MainPage } from "pages/MainPage";
+import { classNames } from "shared/lib/classNames/classNames";
+import { AppRouter } from "app/providers/router";
 type Props = {};
 
 export const App = (props: Props) => {
@@ -18,12 +19,7 @@ export const App = (props: Props) => {
       <button onClick={toggleTheme}>Toggle Theme</button>
       <Link to={"/"}>Main page</Link>
       <Link to={"/about"}>About page</Link>
-      <Suspense fallback={<div>Loading ...</div>}>
-        <Routes>
-          <Route path="/about" element={<AboutPageLazy />} />
-          <Route path="/" element={<MainPageLazy />} />
-        </Routes>
-      </Suspense>
+      <AppRouter />
     </div>
   );
 };
