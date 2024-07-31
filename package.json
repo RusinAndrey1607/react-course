@@ -8,8 +8,11 @@
     "start": "webpack serve --env port=3000 mode=development ",
     "build:dev": "webpack  --env mode=development ",
     "build:prod": "webpack  --env mode=production ",
-    "lint": "eslint **/*.{ts,tsx}",
-    "lint:fix": "eslint **/*.{ts,tsx} --fix "
+    "lint:ts": "eslint **/*.{ts,tsx}",
+    "lint:ts:fix": "eslint **/*.{ts,tsx} --fix ",
+    "lint:scss": "npx stylelint **/*.scss ",
+    "lint:scss:fix": "npx stylelint **/*.scss --fix "
+
   },
   "keywords": [],
   "author": "",
@@ -30,6 +33,9 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-i18next": "^5.1.2",
+    "stylelint": "^14.5.3",
+    "stylelint-config-standard-scss": "^3.0.0",
     "file-loader": "^6.2.0",
     "globals": "^15.8.0",
     "html-webpack-plugin": "^5.5.0",
