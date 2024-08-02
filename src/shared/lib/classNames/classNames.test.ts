@@ -5,12 +5,16 @@ describe('classNames', () => {
         expect(classNames('someClass')).toBe('someClass');
     });
     test('with additional class param', () => {
-        expect(classNames('someClass', {}, ['cls1'])).toBe('someClass cls1');
+        const expected = 'someClass cls1';
+        expect(classNames('someClass', {}, ['cls1'])).toBe(expected);
     });
     test('with additional mods', () => {
-        expect(classNames('someClass', { hovered: true, hidden: false }, ['cls1'])).toBe('someClass cls1 hovered');
+        const expected = 'someClass cls1 hovered';
+        expect(classNames('someClass', { hovered: true, hidden: false }, ['cls1'])).toBe(expected);
     });
     test('with mods undefined', () => {
-        expect(classNames('someClass', { hovered: true, hidden: undefined }, ['cls1'])).toBe('someClass cls1 hovered');
+        const expected = 'someClass cls1';
+
+        expect(classNames('someClass', { hidden: undefined }, ['cls1'])).toBe(expected);
     });
 });
