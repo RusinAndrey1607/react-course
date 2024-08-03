@@ -14,16 +14,18 @@ export const Sidebar = ({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
     const { t } = useTranslation();
 
-    const onTogle = () => {
+    const onTogle = async () => {
         setCollapsed((prev) => !prev);
     };
     return (
         <div
+            data-testid="sidebar"
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
                 className,
             ])}
         >
-            <Button onClick={onTogle}>{t('Toggle')}</Button>
+            {/* eslint-disable-next-line i18next/no-literal-string */}
+            <Button data-testid="sidebar-toggle" onClick={onTogle}>{t('Toggle')}</Button>
 
             <div className={cls.switchers}>
                 <ThemeSwitch />
