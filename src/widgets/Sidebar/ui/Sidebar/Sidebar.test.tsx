@@ -10,7 +10,6 @@ describe('Sidebar render', () => {
         renderWithTranslation(<Sidebar />);
         const toggleBtn = screen.getByTestId('sidebar-toggle');
         expect(toggleBtn).toBeInTheDocument();
-        screen.debug();
     });
     test('Toggle sidebar', () => {
         screen.debug();
@@ -19,6 +18,5 @@ describe('Sidebar render', () => {
         const toggleBtn = screen.getByTestId('sidebar-toggle');
         fireEvent.click(toggleBtn);
         expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
-        screen.debug();
     });
 });
