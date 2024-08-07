@@ -5,11 +5,16 @@ import { Sidebar } from 'widgets/Sidebar/ui/Sidebar/Sidebar';
 
 describe('Sidebar render', () => {
     test('Render button', () => {
+        screen.debug();
+
         renderWithTranslation(<Sidebar />);
-        expect(screen.getByText('Toggle')).toBeInTheDocument();
+        const toggleBtn = screen.getByTestId('sidebar-toggle');
+        expect(toggleBtn).toBeInTheDocument();
         screen.debug();
     });
     test('Toggle sidebar', () => {
+        screen.debug();
+
         renderWithTranslation(<Sidebar />);
         const toggleBtn = screen.getByTestId('sidebar-toggle');
         fireEvent.click(toggleBtn);

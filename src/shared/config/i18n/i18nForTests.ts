@@ -7,12 +7,10 @@ i18n
         lng: 'ru',
         fallbackLng: 'ru',
         debug: false,
-
         interpolation: {
             escapeValue: false,
         },
-
-        resources: { ru: { translationsNS: {} } },
+        resources: { ru: { trasnlations: {} } },
     });
 
 export default i18n;

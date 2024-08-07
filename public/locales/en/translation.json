@@ -4,5 +4,7 @@
   "Toggle": "Toggle",
   "Not Found": "Page not found",
   "unexpected error": "Unexpected error",
-  "reload": "Reload page"
+  "reload": "Reload page",
+  "Main": "MainPage",
+  "About": "About"
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui/Button/Button';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { ThemeSwitch } from 'shared/ui/ThemeSwitch';
 import { LanguageSwitch } from 'shared/ui/LanguageSwitch/LanguageSwitch';
 import { useTranslation } from 'react-i18next';
@@ -24,7 +24,13 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 className,
             ])}
         >
-            <Button data-testid="sidebar-toggle" onClick={onTogle}>{t('Toggle')}</Button>
+            <Button
+                theme={ThemeButton.OUTLINE}
+                data-testid="sidebar-toggle"
+                onClick={onTogle}
+            >
+                {t('Toggle')}
+            </Button>
 
             <div className={cls.switchers}>
                 <ThemeSwitch />

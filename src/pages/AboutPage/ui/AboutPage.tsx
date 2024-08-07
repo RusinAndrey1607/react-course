@@ -4,6 +4,6 @@ type Props = {};
 
 const AboutPage = (props: Props) => {
     const { t } = useTranslation('about');
-    return <div>{t('About')}</div>;
+    return <div>{t('AboutPage')}</div>;
 };
 export default AboutPage;

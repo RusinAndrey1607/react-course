@@ -5,7 +5,12 @@ module.exports = {
         es2021: true,
     },
 
-    extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended'],
+    extends: [
+        'plugin:react/recommended',
+        'airbnb',
+        'plugin:i18next/recommended',
+        'plugin:storybook/recommended',
+    ],
 
     parser: '@typescript-eslint/parser',
 
@@ -25,7 +30,7 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         'i18next/no-literal-string': ['error',
-            { markupOnly: true, ignoreAttribute: ['data-testid'] }],
+            { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
         indent: [2, 4],
 
         'import/no-unresolved': 'off',
@@ -55,7 +60,6 @@ module.exports = {
             files: ['**/src/**/*.test.{ts,tsx}'],
             rules: {
                 'i18next/no-literal-string': 'off',
-
             },
         },
     ],
