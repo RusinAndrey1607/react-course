@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { ThemeSwitch } from 'shared/ui/ThemeSwitch';
 import { LanguageSwitch } from 'shared/ui/LanguageSwitch/LanguageSwitch';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routerConfig/routerConfig';
 import { useTranslation } from 'react-i18next';
+import MainIcon from 'shared/assets/icons/main-20-20.svg';
+import AboutIcon from 'shared/assets/icons/about-20-20.svg';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -24,12 +28,29 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 className,
             ])}
         >
+            <div className={cls.links}>
+                <AppLink to={RoutePath.main} className={cls.item}>
+                    <MainIcon className={cls.icon} />
+                    <span className={cls.link}>
+                        {t('Main')}
+                    </span>
+                </AppLink>
+                <AppLink to={RoutePath.about} className={cls.item}>
+                    <AboutIcon className={cls.icon} />
+                    <span className={cls.link}>
+                        {t('About')}
+                    </span>
+                </AppLink>
+            </div>
             <Button
-                theme={ThemeButton.OUTLINE}
+                theme={ButtonTheme.BACKGROUND_INVERTED}
                 data-testid="sidebar-toggle"
+                square
+                size={ButtonSize.L}
                 onClick={onTogle}
+                className={cls.collapsedBtn}
             >
-                {t('Toggle')}
+                {collapsed ? '>' : '<'}
             </Button>
 
             <div className={cls.switchers}>
