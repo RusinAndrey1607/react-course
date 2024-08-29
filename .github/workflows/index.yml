@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
         matrix:
-            node-version: [17.x]
+            node-version: [18.x]
     steps:
         - name: Checkout master branch
           uses: actions/checkout@v2  
@@ -17,6 +17,8 @@ jobs:
           uses: actions/setup-node@v1
           with:
             node-version: ${{ matrix.node-version }}
+        - name: Add husky
+          run: npm install husky
         - name: Install dependencies
           run: npm install
         - name: Build production project

@@ -5,9 +5,7 @@ import { NavBar } from 'widgets/NavBar';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
 
-type Props = {};
-
-export const App = (props:Props) => {
+export const App = () => {
     const { theme } = useTheme();
     useEffect(() => {
         document.body.className = theme;
