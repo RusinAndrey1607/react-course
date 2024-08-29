@@ -28,6 +28,7 @@ module.exports = {
 
     rules: {
         'react/jsx-indent': [2, 4],
+        'jsx-a11y/no-autofocus': 'warn',
         'react/jsx-indent-props': [2, 4],
         'i18next/no-literal-string': ['error',
             { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],

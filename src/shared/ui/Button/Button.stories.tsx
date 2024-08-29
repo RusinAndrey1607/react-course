@@ -57,20 +57,23 @@ Background.args = {
 
 export const BackgroundDark:Story = Template.bind({});
 BackgroundDark.args = {
-    theme: ButtonTheme.BACKGROUND_INVERTED,
+    theme: ButtonTheme.BACKGROUND,
 };
 BackgroundDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Square:Story = Template.bind({});
-Background.args = {
+Square.args = {
     theme: ButtonTheme.CLEAR,
     square: true,
+    children: '',
+
 };
 
 export const SquareDark:Story = Template.bind({});
 SquareDark.args = {
     theme: ButtonTheme.CLEAR,
     square: true,
+    children: '',
 };
 SquareDark.decorators = [ThemeDecorator(Theme.DARK)];
 
