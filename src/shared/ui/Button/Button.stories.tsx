@@ -93,3 +93,9 @@ SizeXL.args = {
     theme: ButtonTheme.CLEAR,
     size: ButtonSize.XL,
 };
+export const Disabled:Story = Template.bind({});
+Disabled.args = {
+    theme: ButtonTheme.OUTLINE,
+    disabled: true,
+    size: ButtonSize.M,
+};
